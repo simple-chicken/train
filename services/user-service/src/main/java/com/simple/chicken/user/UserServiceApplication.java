@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @ClassName UserServiceApplication
- * @Description TODO
+ * @Description 用户服务启动类
  * @Author wjr
  * @Date 2023/10/31 23:31
  */
