@@ -21,6 +21,12 @@
            <artifactId>simple-chicken-web-spring-boot-starter</artifactId>
            <version>${project.version}</version>
        </dependency>
+       <dependency>
+           <groupId>com.simple.chicken</groupId>
+           <artifactId>simple-chicken-ddd</artifactId>
+           <version>${project.version}</version>
+       </dependency>
+
    </dependencies>
 
 </project>
