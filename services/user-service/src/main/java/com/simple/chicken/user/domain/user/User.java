@@ -8,12 +8,4 @@ import com.simple.chicken.ddd.AggregateRoot;
  * @Author wjr
  * @Date 2023/11/6 16:05
  */
-public class User implements AggregateRoot {
-
-    /**
-     * 用户id
-     */
-    private Long id;
-
-    private
-}
+public class User implements AggregateRoot {}
