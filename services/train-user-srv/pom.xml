@@ -5,21 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.simple.chicken</groupId>
-        <artifactId>train</artifactId>
+        <artifactId>services</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
+    <artifactId>train-user-srv</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>web</module>
-        <module>simple-chicken-database-spring-boot-starter</module>
+        <module>train-user-srv-infrastructure</module>
+        <module>train-user-srv-domain</module>
+        <module>train-user-srv-application</module>
+        <module>train-user-srv-trigger</module>
     </modules>
-
-    <artifactId>component</artifactId>
-
-    <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
 </project>
