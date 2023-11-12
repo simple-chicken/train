@@ -1,7 +1,5 @@
 package com.simple.chicken.database.starter.base;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
@@ -14,7 +12,7 @@ import java.util.Date;
  * @Date 2023/11/8 23:18
  */
 @Data
-public class BaseDO {
+public class BasePO {
 
 
     /**

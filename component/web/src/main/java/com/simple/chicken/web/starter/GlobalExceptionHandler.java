@@ -1,7 +1,6 @@
 package com.simple.chicken.web.starter;
 
-import cn.hutool.core.collection.CollectionUtil;
-import cn.hutool.core.util.StrUtil;
+
 import com.simple.chicken.web.starter.errcode.BaseErrorCode;
 import com.simple.chicken.web.starter.exception.AbstractException;
 import com.simple.chicken.web.starter.result.Result;
@@ -10,11 +9,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-import java.util.Optional;
 
 /**
  * @ClassName GlobalExceptionHandler
@@ -36,10 +34,15 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
     public Result validExceptionHandler(HttpServletRequest request, MethodArgumentNotValidException ex){
         BindingResult bindingResult = ex.getBindingResult();
-        FieldError firstFieldError = CollectionUtil.getFirst(bindingResult.getFieldErrors());
-        String exceptionStr = Optional.ofNullable(firstFieldError)
+        // 先尝试获取字段错误的消息，如果没有字段错误，则获取全局错误的消息
+        String exceptionStr = bindingResult.getFieldErrors().stream()
+                .findFirst()
                 .map(FieldError::getDefaultMessage)
-                .orElse(StrUtil.EMPTY);
+                .orElseGet(() -> bindingResult.getGlobalErrors().stream()
+                        .findFirst()
+                        .map(ObjectError::getDefaultMessage)
+                        .orElse(null));
+
         log.error("[{}] {} [ex] {}", request.getMethod(), getUrl(request), exceptionStr);
         return Results.failure(BaseErrorCode.CLIENT_ERROR.code(), exceptionStr);
     }
@@ -50,7 +53,7 @@ public class GlobalExceptionHandler {
      * @param ex
      * @return
      */
-    @ExceptionHandler(value = AbstractMethodError.class)
+    @ExceptionHandler(value = AbstractException.class)
     public Result methodErrorHandler(HttpServletRequest request, AbstractException ex){
         if (ex.getCause() != null) {
             log.error("[{}] {} [ex] {}", request.getMethod(), request.getRequestURL().toString(), ex, ex.getCause());

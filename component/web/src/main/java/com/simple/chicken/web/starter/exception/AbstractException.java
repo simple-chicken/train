@@ -4,7 +4,6 @@ import com.simple.chicken.web.starter.errcode.IErrorCode;
 import lombok.Getter;
 import org.springframework.util.StringUtils;
 
-import java.rmi.RemoteException;
 import java.util.Optional;
 
 /**
@@ -14,7 +13,7 @@ import java.util.Optional;
  * @Date 2023/11/1 14:10
  */
 @Getter
-public abstract class AbstractException extends RemoteException {
+public abstract class AbstractException extends RuntimeException {
     public final String errorCode;
 
     public final String errorMessage;

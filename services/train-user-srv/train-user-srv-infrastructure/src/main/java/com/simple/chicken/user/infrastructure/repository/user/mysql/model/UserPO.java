@@ -1,10 +1,9 @@
-package com.simple.chicken.entity;
+package com.simple.chicken.user.infrastructure.repository.user.mysql.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.simple.chicken.database.starter.base.BaseDO;
-import lombok.Builder;
+import com.simple.chicken.database.starter.base.BasePO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -25,7 +24,7 @@ import java.util.Date;
 @Data
 @TableName("t_user")
 @Accessors(chain = true)
-public class User extends BaseDO implements Serializable  {
+public class UserPO extends BasePO implements Serializable  {
 
     @Serial
     private static final long serialVersionUID = 1L;

@@ -6,10 +6,8 @@ spring:
   application:
     name: train-user-srv
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://rm-cn-g4t3gvqk2001171o.rwlb.rds.aliyuncs.com/train_user_0?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-    username: wjr_train
-    password: wjr_train_1999
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    url: jdbc:shardingsphere:classpath:shardingsphere-config.yaml
 
 mybatis-plus:
   global-config:

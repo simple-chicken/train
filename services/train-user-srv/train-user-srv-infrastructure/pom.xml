@@ -11,4 +11,19 @@
 
     <artifactId>train-user-srv-infrastructure</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.simple.chicken</groupId>
+            <artifactId>simple-chicken-database-spring-boot-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
 </project>

@@ -1,10 +1,10 @@
-package com.simple.chicken;
+package com.simple.chicken.user.trigger;
 
-import com.simple.chicken.entity.User;
-import com.simple.chicken.mapper.UserMapper;
+import com.simple.chicken.user.infrastructure.repository.user.mysql.mapper.UserMapper;
+import com.simple.chicken.user.infrastructure.repository.user.mysql.model.UserPO;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.junit.jupiter.api.Test;
 
 
 /**
@@ -21,8 +21,10 @@ public class UserTest {
 
     @Test
     public void addUser(){
-        User user = new User();
-        user.setPhone("1");
+        UserPO user = new UserPO().setUsername("wjr");
+        user.setPhone("15942429004");
         userMapper.insert(user);
     }
+
+
 }

@@ -19,9 +19,4 @@ public class WebAutoConfiguration {
         return new GlobalExceptionHandler();
     }
 
-
-
-
-
-
 }
