@@ -3,6 +3,7 @@ package com.simple.chicken.user.domain.user.model;
 import com.simple.chicken.user.domain.user.errcode.UserRegisterErrorCodeEnum;
 import com.simple.chicken.web.starter.exception.ClientException;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 /**
  * @ClassName IdType
@@ -11,6 +12,7 @@ import lombok.AllArgsConstructor;
  * @Date 2023/11/12 21:28
  */
 @AllArgsConstructor
+@Getter
 public enum IdTypeEnum {
     ID_CARD(1,"身份证"),
     ID_HK_MACAO_PASS(2,"港澳通行证"),
@@ -24,15 +26,6 @@ public enum IdTypeEnum {
 
 
     private final String message;
-
-
-    public Integer code() {
-        return code;
-    }
-
-    public String message() {
-        return message;
-    }
 
 
     public static IdTypeEnum get(Integer x) {

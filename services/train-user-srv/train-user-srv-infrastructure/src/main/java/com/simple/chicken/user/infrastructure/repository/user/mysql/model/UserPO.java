@@ -4,9 +4,9 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.simple.chicken.database.starter.base.BasePO;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -23,7 +23,7 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("t_user")
-@Accessors(chain = true)
+@Builder
 public class UserPO extends BasePO implements Serializable  {
 
     @Serial
@@ -32,7 +32,7 @@ public class UserPO extends BasePO implements Serializable  {
     /**
      * ID
      */
-    @TableId(type = IdType.ASSIGN_ID)
+    @TableId(type = IdType.INPUT)
     private Long id;
 
     /**

@@ -1,5 +1,6 @@
 package com.simple.chicken.user.trigger.controller;
 
+import com.simple.chicken.distributedid.toolkit.SnowflakeIdUtil;
 import com.simple.chicken.user.application.register.UserRegisterApplication;
 import com.simple.chicken.user.application.register.dto.request.UserRegisterReqDTO;
 import com.simple.chicken.user.application.register.dto.response.UserRegisterRespDTO;
@@ -29,5 +30,11 @@ public class UserRegisterController {
     @PostMapping("/register")
     public Result<UserRegisterRespDTO> register(@Valid @RequestBody UserRegisterReqDTO registerReqDTO) throws ClientException {
         return Results.success(userRegisterApplication.register(registerReqDTO));
+    }
+
+
+    @RequestMapping("/id")
+    public Result<String> id() {
+        return Results.success(SnowflakeIdUtil.nextIdStr());
     }
 }

@@ -43,7 +43,7 @@ public class GlobalExceptionHandler {
                         .map(ObjectError::getDefaultMessage)
                         .orElse(null));
 
-        log.error("[{}] {} [ex] {}", request.getMethod(), getUrl(request), exceptionStr);
+        log.error("GlobalExceptionHandler.validExceptionHandler [{}] {} [ex] {}", request.getMethod(), getUrl(request), exceptionStr);
         return Results.failure(BaseErrorCode.CLIENT_ERROR.code(), exceptionStr);
     }
 
@@ -59,7 +59,7 @@ public class GlobalExceptionHandler {
             log.error("[{}] {} [ex] {}", request.getMethod(), request.getRequestURL().toString(), ex, ex.getCause());
             return Results.failure(ex);
         }
-        log.error("[{}] {} [ex] {}", request.getMethod(), request.getRequestURL().toString(), ex.toString());
+        log.error("GlobalExceptionHandler.methodErrorHandler [{}] {} [ex] {}", request.getMethod(), request.getRequestURL().toString(), ex.toString());
         return Results.failure(ex);
     }
 

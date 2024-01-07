@@ -12,7 +12,9 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum UserRegisterErrorCodeEnum implements IErrorCode {
     USER_REGISTER_MOBILE_VALID("A006000", "用户手机号格式错误"),
-    USER_REGISTER_ID_TYPE_VALID("A006001", "暂不支持该用户证件类型"),;;
+    USER_REGISTER_ID_TYPE_VALID("A006001", "暂不支持该用户证件类型"),
+    USER_REGISTER_USER_TYPE_VALID("A006002", "暂不支持该旅客类型"),
+    USER_REGISTER_USER_NAME_EXIST("A006003", "用户名已存在"),;
 
     /**
      * 错误码

@@ -70,7 +70,7 @@ public class UserDO {
     /**
      * 旅客类型 1.成人 2.儿童 3.学生 4.残疾军人
      */
-    private Integer userType;
+    private UserTypeEnum userType;
 
     /**
      * 审核状态
@@ -92,7 +92,7 @@ public class UserDO {
      */
     private Date logoutTime;
 
-    public UserDO(Long id, String username, String password, String realName, String region, IdTypeEnum idTypeEnum, String idCard, String phone, String telephone, String mail, Integer userType, Integer verifyStatus, String postCode, String address, Date logoutTime) {
+    public UserDO(Long id, String username, String password, String realName, String region, IdTypeEnum idTypeEnum, String idCard, String phone, String telephone, String mail, UserTypeEnum userType, Integer verifyStatus, String postCode, String address, Date logoutTime) {
         this.id = id;
         this.username = username;
         this.password = password;

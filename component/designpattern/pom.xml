@@ -5,18 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.simple.chicken</groupId>
-        <artifactId>train</artifactId>
+        <artifactId>component</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <packaging>pom</packaging>
-    <modules>
-        <module>web</module>
-        <module>simple-chicken-database-spring-boot-starter</module>
-        <module>designpattern</module>
-        <module>distributedid</module>
-    </modules>
 
-    <artifactId>component</artifactId>
+    <artifactId>designpattern</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
